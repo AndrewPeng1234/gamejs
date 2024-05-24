@@ -5,16 +5,16 @@ kaboom({
     background: [40, 40, 40]
 });
 
+let speed = 320;
+let momentum = 0;
+const decelerationFactor = 0.161;
+
 scene("level_1", () => {
     // define gravity
     setGravity(1950);
 
     // load a default sprite
     loadBean();
-
-    let speed = 320;
-    let momentum = 0;
-    const decelerationFactor = 0.161;
 
     // add character to screen, from a list of components
     const player = add([
