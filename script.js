@@ -14,7 +14,7 @@ scene("level_1", () => {
 
     let speed = 320;
     let momentum = 0;
-    const decelerationFactor = 0.158;
+    const decelerationFactor = 0.161;
 
     // add character to screen, from a list of components
     const player = add([
