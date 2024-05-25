@@ -149,17 +149,18 @@ scene("level_2", () => {
         "player"
     ]);
 
-    add([
+    // lava
+    const lava = add([
         rect(width(), 40),
         pos(0, height() - 40),
         area(),
         body({ isStatic: true }),
-        color(0, 255, 0)
+        color(255, 87, 51),
     ]);
 
     add([
         rect(100, 20),
-        pos(250, height() - 300),
+        pos(150, height() - 300),
         area(),
         body({ isStatic: true }),
         color(255, 255, 0)
@@ -167,7 +168,7 @@ scene("level_2", () => {
 
     add([
         rect(100, 20),
-        pos(435, height() - 190),
+        pos(335, height() - 190),
         area(),
         body({ isStatic: true }),
         color(255, 255, 0)
@@ -175,7 +176,7 @@ scene("level_2", () => {
 
     add([
         rect(100, 20),
-        pos(635, height() - 90),
+        pos(535, height() - 90),
         area(),
         body({ isStatic: true }),
         color(255, 255, 0)
@@ -183,7 +184,7 @@ scene("level_2", () => {
 
     add([
         rect(100, 20),
-        pos(835, height() - 190),
+        pos(735, height() - 190),
         area(),
         body({ isStatic: true }),
         color(255, 255, 0)
@@ -191,7 +192,7 @@ scene("level_2", () => {
 
     add([
         rect(100, 20),
-        pos(1030, height() - 300),
+        pos(900, height() - 295),
         area(),
         body({ isStatic: true }),
         color(255, 255, 0)
@@ -199,7 +200,7 @@ scene("level_2", () => {
 
     add([
         rect(100, 20),
-        pos(1200, height() - 410),
+        pos(1050, height() - 400),
         area(),
         body({ isStatic: true }),
         color(255, 255, 0)
@@ -207,7 +208,7 @@ scene("level_2", () => {
 
     add([
         rect(100, 20),
-        pos(1370, height() - 520),
+        pos(1135, height() - 505),
         area(),
         body({ isStatic: true }),
         color(255, 255, 0)
@@ -215,7 +216,7 @@ scene("level_2", () => {
 
     add([
         rect(100, 20),
-        pos(1500, height() - 630),
+        pos(1200, height() - 630),
         area(),
         body({ isStatic: true }),
         color(255, 255, 0)
@@ -224,7 +225,7 @@ scene("level_2", () => {
     const moon = add([
         circle(85),
         pos(width() - 250, 130),
-        color(0, 255, 255),
+        color(255, 255, 255),
         area(),
     ]);
 
@@ -260,9 +261,47 @@ scene("level_2", () => {
     });
 
     moon.onCollide("player", () => {
-        go("level_3");
+        go("win")
     });
+    
+    lava.onCollide("player", () => {
+        go("gameOver")
+    })
 
+});
+
+scene("gameOver", () => {
+    add([
+        sprite("bean"),
+        pos(width() / 2, height() / 2 - 80),
+        scale(2),
+        anchor("center"),
+    ]);
+
+    // display score
+    add([
+        text("Game Over!"),
+        pos(width() / 2, height() / 2 + 80),
+        scale(2),
+        anchor("center")
+    ]);
+});
+
+scene("win", () => {
+    add([
+        sprite("bean"),
+        pos(width() / 2, height() / 2 - 80),
+        scale(2),
+        anchor("center"),
+    ]);
+
+    // display score
+    add([
+        text("You Win!"),
+        pos(width() / 2, height() / 2 + 80),
+        scale(2),
+        anchor("center")
+    ]);
 });
 
 scene("level_3", () => {
@@ -341,7 +380,7 @@ scene("level_3", () => {
     const moon = add([
         circle(85),
         pos(width() - 250, 130),
-        color(0, 255, 255),
+        color(255, 255, 255),
         area()
     ]);
 
