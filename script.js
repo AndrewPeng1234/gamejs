@@ -8,10 +8,11 @@ kaboom({
 let speed = 320;
 let momentum = 0;
 const decelerationFactor = 0.23;
+const gravity = 1900
 
 scene("level_1", () => {
     // define gravity
-    setGravity(1950);
+    setGravity(gravity);
 
     // load a default sprite
     loadBean();
@@ -86,7 +87,7 @@ scene("level_1", () => {
     ]);
 
     const moon = add([
-        circle(85),
+        circle(58),
         pos(width() - 250, 130),
         color(255, 255, 255),
         area()
@@ -133,7 +134,7 @@ scene("level_1", () => {
 go("level_1");
 
 scene("level_2", () => {
-    setGravity(1950);
+    setGravity(gravity);
 
     // load a default sprite
     loadBean();
@@ -305,7 +306,7 @@ scene("win", () => {
 });
 
 scene("level_3", () => {
-    setGravity(1950);
+    setGravity(gravity);
 
     // load a default sprite
     loadBean();
