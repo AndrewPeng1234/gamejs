@@ -2,12 +2,12 @@ import kaboom from "https://unpkg.com/kaboom@3000.0.1/dist/kaboom.mjs";
 
 // start the game
 kaboom({
-    background: [40, 40, 40]
+    background: [20, 20, 40]
 });
 
 let speed = 320;
 let momentum = 0;
-const decelerationFactor = 0.161;
+const decelerationFactor = 0.23;
 
 scene("level_1", () => {
     // define gravity
@@ -143,7 +143,7 @@ scene("level_2", () => {
     // add character to screen, from a list of components
     const player = add([
         sprite("bean"),  // renders as a sprite
-        pos(120, 80),    // position in world
+        pos(200, 80),    // position in world
         area(),          // has a collider
         body(),          // responds to physics and gravity
         "player"
@@ -159,7 +159,7 @@ scene("level_2", () => {
 
     add([
         rect(100, 20),
-        pos(250, height() - 100),
+        pos(250, height() - 300),
         area(),
         body({ isStatic: true }),
         color(255, 255, 0)
@@ -175,7 +175,7 @@ scene("level_2", () => {
 
     add([
         rect(100, 20),
-        pos(635, height() - 295),
+        pos(635, height() - 90),
         area(),
         body({ isStatic: true }),
         color(255, 255, 0)
@@ -183,7 +183,7 @@ scene("level_2", () => {
 
     add([
         rect(100, 20),
-        pos(835, height() - 400),
+        pos(835, height() - 190),
         area(),
         body({ isStatic: true }),
         color(255, 255, 0)
@@ -191,7 +191,7 @@ scene("level_2", () => {
 
     add([
         rect(100, 20),
-        pos(1030, height() - 505),
+        pos(1030, height() - 300),
         area(),
         body({ isStatic: true }),
         color(255, 255, 0)
@@ -199,7 +199,23 @@ scene("level_2", () => {
 
     add([
         rect(100, 20),
-        pos(1200, height() - 595),
+        pos(1200, height() - 410),
+        area(),
+        body({ isStatic: true }),
+        color(255, 255, 0)
+    ]);
+
+    add([
+        rect(100, 20),
+        pos(1370, height() - 520),
+        area(),
+        body({ isStatic: true }),
+        color(255, 255, 0)
+    ]);
+
+    add([
+        rect(100, 20),
+        pos(1500, height() - 630),
         area(),
         body({ isStatic: true }),
         color(255, 255, 0)
