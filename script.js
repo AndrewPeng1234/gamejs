@@ -279,7 +279,6 @@ scene("gameOver", () => {
         anchor("center"),
     ]);
 
-    // display score
     add([
         text("Game Over!"),
         pos(width() / 2, height() / 2 + 80),
@@ -296,7 +295,6 @@ scene("win", () => {
         anchor("center"),
     ]);
 
-    // display score
     add([
         text("You Win!"),
         pos(width() / 2, height() / 2 + 80),
