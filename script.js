@@ -7,8 +7,8 @@ kaboom({
 
 let speed = 320;
 let momentum = 0;
-const decelerationFactor = 0.23;
-const gravity = 1900
+const decelerationFactor = 0.232;
+const gravity = 1865
 
 scene("level_1", () => {
     // define gravity
@@ -17,10 +17,13 @@ scene("level_1", () => {
     // load a default sprite
     loadBean();
 
+    const fplatX = 250;
+    const fplatY = height() - 100;
+
     // add character to screen, from a list of components
     const player = add([
         sprite("bean"),  // renders as a sprite
-        pos(120, 80),    // position in world
+        pos(fplatX, fplatY - 80),    // position in world
         area(),          // has a collider
         body(),          // responds to physics and gravity
         {
@@ -40,7 +43,7 @@ scene("level_1", () => {
 
     add([
         rect(100, 20),
-        pos(250, height() - 100),
+        pos(fplatX, fplatY),
         area(),
         body({ isStatic: true }),
         color(255, 255, 0)
@@ -87,7 +90,7 @@ scene("level_1", () => {
     ]);
 
     const moon = add([
-        circle(58),
+        circle(68),
         pos(width() - 250, 130),
         color(255, 255, 255),
         area()
@@ -140,11 +143,13 @@ scene("level_2", () => {
     loadBean();
 
     const speed = 320;
+    const fplatX = 150;
+    const fplatY = height() - 300;
 
     // add character to screen, from a list of components
     const player = add([
         sprite("bean"),  // renders as a sprite
-        pos(200, 80),    // position in world
+        pos(fplatX, fplatY - 80),    // position in world
         area(),          // has a collider
         body(),          // responds to physics and gravity
         "player"
@@ -161,7 +166,7 @@ scene("level_2", () => {
 
     add([
         rect(100, 20),
-        pos(150, height() - 300),
+        pos(fplatX, fplatY),
         area(),
         body({ isStatic: true }),
         color(255, 255, 0)
@@ -217,14 +222,14 @@ scene("level_2", () => {
 
     add([
         rect(100, 20),
-        pos(1200, height() - 630),
+        pos(1200, height() - 605),
         area(),
         body({ isStatic: true }),
         color(255, 255, 0)
     ]);
 
     const moon = add([
-        circle(85),
+        circle(68),
         pos(width() - 250, 130),
         color(255, 255, 255),
         area(),
@@ -377,7 +382,7 @@ scene("level_3", () => {
     ]);
 
     const moon = add([
-        circle(85),
+        circle(68),
         pos(width() - 250, 130),
         color(255, 255, 255),
         area()
